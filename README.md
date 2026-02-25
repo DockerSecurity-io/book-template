@@ -1,55 +1,54 @@
-# 🐳 Docker 101: The Open Book by Docker Captains
+# 🐳 Docker Security Book Template
 
-> *A free, open-source introduction to Docker — written and maintained by Docker Captains and the community.*
-
----
-
-### 📘 What is this book?
-
-**Docker 101: The Open Book** is a practical, community-driven guide to containerization.  
-It’s built to help developers go from *zero to containers* — confidently and securely — using real-world workflows and Captain-tested practices.
-
-This book is:
-- 🧭 **Beginner-friendly** — start from your first `docker run`.
-- 🛠️ **Hands-on** — every concept has examples you can run locally or in Play-with-Docker.
-- 🔐 **Security-aware** — naturally leads into [*Docker and Kubernetes Security*](https://dockersecurity.io).
-- 🤝 **Collaborative** — open for contributions, translations, and continuous updates.
+> *An open-source book template for the community, based on the book "Docker and Kubernetes Security" by Mohammad-Ali A'râbi.*
 
 ---
 
-### 🎯 Mission Statement
+This book is written using Markdown and Pandoc. The source files are in the `chapters` directory.
+The book is built using the `Makefile` and `pandoc` command:
 
-> We believe foundational Docker knowledge should be freely available to everyone.
->
-> **Docker 101** complements and does not compete with the available commercial books and training.
-> It serves as an open, modern prerequisite that prepares readers for deeper learning and for container security best practices.
+```bash
+make pdf
+```
 
----
+or
 
-### 📚 Contents at a Glance
+```bash
+make epub
+```
 
-| Part           | Title                                                            | Summary                                     |
-|----------------|------------------------------------------------------------------|---------------------------------------------|
-| **I**          | *Getting Started with Docker*                                    | From installation to your first image       |
-| **II**         | *Working with Containers*                                        | Volumes, networks, Compose, troubleshooting |
-| **III**        | *Docker in Practice*                                             | CI/CD, workflows, Captain tips              |
-| **IV**         | *From Docker to Security*                                        | Secure habits and the path toward DevSecOps |
-| **Appendices** | CLI Reference, Dockerfile Cheat Sheet, Troubleshooting, Glossary |
+The book is built in the `output` directory.
 
----
+## Install Pandoc
 
-### 🧭 Formats & Availability
+On Ubuntu, install Pandoc and Tex Live:
 
-| Format                 | Access        |
-|:-----------------------|:--------------|
-| 🌐 **HTML Website**    | Free          |
-| 📄 **PDF & ePub**      | Free Download |
-| 📗 **Printed Edition** | Paid Support  |
+```bash
+sudo apt install pandoc texlive texlive-xetex latexmk
+```
 
-All digital formats are free under the **CC BY-SA 4.0** license.  
-Purchasing the print version helps fund ongoing community work and printing costs.
+On macOS, install Pandoc using Homebrew:
 
-### 🤝 Contributing
+```bash
+brew install pandoc
+```
 
-Contributions are welcome!  
-See the [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to get involved.
+But to install Tex Live, you need to download the installer from the [Tex Live website](https://www.tug.org/mactex/mactex-download.html).
+Then install `latexmk` using Tex Live's package manager:
+
+```bash
+sudo tlmgr update --self
+sudo tlmgr install latexmk
+```
+
+Make sure to have the fonts installed:
+
+```bash
+brew install --cask font-fira-code
+brew install --cask font-libertinus
+brew install --cask font-latin-modern
+```
+
+## License
+
+This project is licensed under **CC BY-SA 4.0**. See [LICENSE](LICENSE) for details.
